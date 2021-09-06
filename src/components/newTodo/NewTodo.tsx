@@ -1,6 +1,8 @@
 import React, {FC, FormEvent, useRef} from 'react';
 //interfaces
-import {NewTodoInterface} from "../interfaces/NewTodoInterface";
+import {NewTodoInterface} from "../../interfaces/NewTodoInterface";
+//styles
+import classes from './NewTodo.module.css';
 
 const NewTodo: FC<NewTodoInterface> = ({onAddTodo}) => {
     const todoTextInputRef = useRef<HTMLInputElement>(null);
@@ -17,7 +19,7 @@ const NewTodo: FC<NewTodoInterface> = ({onAddTodo}) => {
     };
 
     return (
-        <form onSubmit={submitHandler}>
+        <form className={classes.form} onSubmit={submitHandler}>
             <label htmlFor='todoText'>Todo text</label>
             <input type='text' id='todoText' ref={todoTextInputRef}/>
             <button>Add</button>

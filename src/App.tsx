@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 //interfaces
 import {Item} from "./interfaces/TodosInterface";
 //components
-import Todos from "./components/Todos";
-import NewTodo from "./components/NewTodo";
+import Todos from "./components/todos/Todos";
+import NewTodo from "./components/newTodo/NewTodo";
 
 function App() {
     const [items, setItems] = useState<Item[]>([]);
