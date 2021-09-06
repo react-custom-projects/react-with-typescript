@@ -1,9 +1,8 @@
 type Item = {
     id: number,
     title: string,
-}
+};
 
-export interface Props {
+export interface TodosProps {
     items: Item[]
 }
-

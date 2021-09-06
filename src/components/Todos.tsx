@@ -1,11 +1,12 @@
 import React, {FC} from 'react';
 //interfaces
-import {Props} from "../interfaces/Todos";
+import {TodosProps} from "../interfaces/TodosInterface";
+import Todo from "./Todo";
 
-const Todos: FC<Props> = ({ items}) => {
+const Todos: FC<TodosProps> = ({ items}) => {
     return (
         <ul>
-            {items.map((el) => <li key={el.id}>{el.title}</li>)}
+            {items.map((el) => <Todo key={el.id} title={el.title} />)}
         </ul>
     );
 };
