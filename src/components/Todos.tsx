@@ -1,9 +1,11 @@
 import React, {FC} from 'react';
+//interfaces
+import {Props} from "../interfaces/Todos";
 
-const Todos: FC<{ items: string[] }> = ({children, items}) => {
+const Todos: FC<Props> = ({ items}) => {
     return (
         <ul>
-            {items.map((el, i) => <li key={i}>{el}</li>)}
+            {items.map((el) => <li key={el.id}>{el.title}</li>)}
         </ul>
     );
 };
