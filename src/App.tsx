@@ -1,12 +1,23 @@
-import React from 'react';
+import React, {useState} from 'react';
+//interfaces
+import {Item} from "./interfaces/TodosInterface";
 //components
 import Todos from "./components/Todos";
+import NewTodo from "./components/NewTodo";
 
 function App() {
-    const items = [{id: 1, title: 'Learn React'}, {id: 2, title: 'Learn Typescript'}];
+    const [items, setItems] = useState<Item[]>([]);
+
+    const onAddTodo = (text: string) => {
+        const newItem = {id: new Date().getMilliseconds(), title: text};
+        setItems(prev => prev.concat(newItem));
+    };
 
     return (
-        <Todos items={items}/>
+        <>
+            <NewTodo onAddTodo={onAddTodo}/>
+            <Todos items={items}/>
+        </>
     );
 }
 
