@@ -5,9 +5,12 @@ import Todo from "../todo/Todo";
 //styles
 import classes from './Todos.module.css';
 
-const Todos: FC<TodosProps> = ({items}) => (
+const Todos: FC<TodosProps> = ({items, onDeleteTodo}) => (
     <ul className={classes.todos}>
-        {items.map((el) => <Todo key={el.id} title={el.title}/>)}
+        {items.map((el) => <Todo key={el.id}
+                                 item={el}
+                                 onDeleteTodo={onDeleteTodo}/>
+        )}
     </ul>
 );
 

@@ -4,6 +4,11 @@ import {TodoProps} from "../../interfaces/TodoInterface";
 //styles
 import classes from './Todo.module.css';
 
-const Todo: FC<TodoProps> = ({title}) => <li className={classes.item}>{title}</li>;
+const Todo: FC<TodoProps> = ({item, onDeleteTodo}) => (
+    <li className={classes.item}
+        onClick={() => onDeleteTodo(item.id)}>
+        {item.title}
+    </li>
+);
 
 export default Todo;

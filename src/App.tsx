@@ -13,10 +13,14 @@ function App() {
         setItems(prev => prev.concat(newItem));
     };
 
+    const onDeleteTodo = (id: number) => {
+        setItems(prev => prev.filter(el => el.id !== id));
+    }
+
     return (
         <>
             <NewTodo onAddTodo={onAddTodo}/>
-            <Todos items={items}/>
+            <Todos items={items} onDeleteTodo={onDeleteTodo}/>
         </>
     );
 }

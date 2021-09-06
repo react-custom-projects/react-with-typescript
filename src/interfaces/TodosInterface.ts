@@ -4,5 +4,6 @@ export type Item = {
 };
 
 export interface TodosProps {
-    items: Item[]
+    items: Item[],
+    onDeleteTodo: (id: number) => void,
 }

@@ -1,3 +1,6 @@
+import {Item} from "./TodosInterface";
+
 export interface TodoProps {
-    title: string,
+    item: Item,
+    onDeleteTodo: (id: number) => void,
 }
