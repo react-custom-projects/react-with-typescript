@@ -1,10 +1,9 @@
-import React from 'react';
+import React, {FC} from 'react';
 
-const Todos = () => {
+const Todos: FC<{ items: string[] }> = ({children, items}) => {
     return (
         <ul>
-            <li>Learn React</li>
-            <li>Learn Typescript</li>
+            {items.map((el, i) => <li key={i}>{el}</li>)}
         </ul>
     );
 };
