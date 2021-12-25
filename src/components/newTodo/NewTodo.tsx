@@ -1,4 +1,4 @@
-import React, {FC, FormEvent, useRef} from 'react';
+import React, {ChangeEvent, FC, FormEvent, useRef} from 'react';
 //interfaces
 import {NewTodoInterface} from "../../interfaces/NewTodoInterface";
 //styles
@@ -18,10 +18,14 @@ const NewTodo: FC<NewTodoInterface> = ({onAddTodo}) => {
         onAddTodo(enteredText);
     };
 
+    const nameHandler = ({target: {value}}: ChangeEvent<HTMLInputElement>) => {
+        console.log(value);
+    }
+
     return (
         <form className={classes.form} onSubmit={submitHandler}>
             <label htmlFor='todoText'>Todo text</label>
-            <input type='text' id='todoText' ref={todoTextInputRef}/>
+            <input type='text' onChange={nameHandler} id='todoText' ref={todoTextInputRef}/>
             <button>Add</button>
         </form>
     );
